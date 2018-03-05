@@ -2,6 +2,7 @@ const express = require('express');
 const hbs = require('hbs'); // Handlebars
 const fs = require('fs'); 	// File System
 
+const port = process.env.PORT || 3000;
 var	app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -63,8 +64,9 @@ app.get('/about', function(req, res){
 });
 
 
-var	server = app.listen(8081, function(){
-	var	host = server.address().address;
-	var port = server.address().port;
-	console.log("Server listening at http://%s:%s", host, port);
+var	server = app.listen(port, function(){
+	//var	host = server.address().address;
+	//var port = server.address().port;
+	//console.log("Server listening at http://%s:%s", host, port);
+	console.log('Server is up on port ' + port);
 });
