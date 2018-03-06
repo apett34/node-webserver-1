@@ -64,6 +64,14 @@ app.get('/about', function(req, res){
 });
 
 
+app.get('/projects', function(req, res){
+	console.log('Projects page visited.');
+	res.render('projects.hbs', {
+		pageTitle: 'Projects Page'
+	});
+});
+
+
 var	server = app.listen(port, function(){
 	//var	host = server.address().address;
 	//var port = server.address().port;
